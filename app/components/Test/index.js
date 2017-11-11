@@ -5,7 +5,10 @@ const Test = props => {
 
   return (
     <div className="test">
-      Test Component REACRTTTTTT
+      Test Component REACRTaslkjakdasdasdjTTTTT
+      <form action="/test" method="post">
+        <input type="submit" value="testbutton"/>
+      </form>
     </div>
   );
 };

@@ -1,7 +1,22 @@
 let mongoose = require('mongoose');
 
-let TestSchema = new mongoose.Schema({
-  test: {type: String, required: true}
+let EmployeeSchema = new mongoose.Schema({
+  fname: {
+    type: String,
+    required: true
+  },
+  lname: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
 });
 
-module.exports = mongoose.model('Test', TestSchema);
+var Employee = mongoose.model('Employee', EmployeeSchema);
+
+module.exports = {
+  Employee
+}
