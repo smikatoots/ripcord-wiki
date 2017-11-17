@@ -7,9 +7,20 @@ const api = {
 };
 
 module.exports = (app) => {
+    app.get('/icon', function(req, res) {
+      console.log('ICON GET REQUEST HERE');
+      Employee.find(function(err, employees) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(employees);
+          return;
+        }
+      });
+    });
 
     app.post('/test', function(req, res) {
-      console.log('post tet', models);
+      console.log('post test', models.EmployeeSchema);
       var e = new Employee({
         fname: 'mika',
         lname: 'reyes',

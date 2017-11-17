@@ -5,3 +5,9 @@ export function reset() {
     type: types.RESET
   };
 }
+
+// export function changeFilter() {
+//   return {
+//     type: types.CHANGE_FILTER
+//   };
+// }

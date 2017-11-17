@@ -1,0 +1,11 @@
+.filter-group {
+  margin: auto;
+  width: 80%;
+  // background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}

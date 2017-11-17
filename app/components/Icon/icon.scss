@@ -1,0 +1,16 @@
+$size: 200px;
+
+.icon {
+  height: $size + 20px;
+  width: $size;
+  margin: 10px;
+  color: black;
+  text-align: center;
+  text-transform: capitalize;
+  img {
+    background-color: black;
+    height: $size;
+    width: $size;
+    border-radius: $size;
+  }
+}

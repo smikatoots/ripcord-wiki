@@ -1,6 +1,11 @@
 import React from 'react';
 import * as actions from '../../actions/HomePage';
-import {Test} from '../../components';
+import {
+  Test,
+  FilterGroup,
+  Header,
+} from '../../components';
+import IconGroupContainer from '../../containers/IconGroupContainer';
 import {ContainerEnhancer} from '../../HOC';
 
 class Home extends React.Component {
@@ -9,8 +14,9 @@ class Home extends React.Component {
 
     return (
       <div className="home-page">
-        Home Page
-        <Test/>
+        <Header/>
+        <FilterGroup/>
+        <IconGroupContainer/>
       </div>
     );
   }

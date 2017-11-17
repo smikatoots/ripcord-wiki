@@ -6,5 +6,13 @@ html {
     font-family: Avenir;
 
     @import "../components/Test/test";
+    @import "../components/FilterGroup/filtergroup";
+    @import "../components/FilterItem/filteritem";
+    @import "../components/Header/header";
+    @import "../components/Icon/icon";
+    @import "../components/IconGroup/icongroup";
+
+
+
   }
 }
