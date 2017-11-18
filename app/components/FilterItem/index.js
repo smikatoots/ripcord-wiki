@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FilterItem = props => {
-
   return (
-    <div className="filter-item">
+    <button
+      className="filter-item"
+      onClick={() => props.changeFilter(`${props.filterItemCategory}`)}
+    >
       {props.filterItemCategory}
-    </div>
+    </button>
   );
 };
 

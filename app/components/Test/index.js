@@ -8,6 +8,7 @@ const Test = props => {
       <form action="/test" method="post">
         <input type="submit" value="testbutton"/>
       </form>
+      <button onClick={props.changeFilter}>CLICK ME</button>
     </div>
   );
 };

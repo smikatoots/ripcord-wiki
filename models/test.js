@@ -13,6 +13,10 @@ let EmployeeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  department: {
+    type: String,
+    required: true
+  }
 });
 
 var Employee = mongoose.model('Employee', EmployeeSchema);

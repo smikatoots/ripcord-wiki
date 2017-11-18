@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 import {
   FilterItem,
 } from '../../components';
+import FilterItemContainer from '../../containers/FilterItemContainer';
 
 const FilterGroup = props => {
 
   return (
     <div className="filter-group">
-      <FilterItem filterItemCategory="all"/>
-      <FilterItem filterItemCategory="executives"/>
-      <FilterItem filterItemCategory="sales & marketing"/>
-      <FilterItem filterItemCategory="engineering"/>
-      <FilterItem filterItemCategory="operations"/>
-      <FilterItem filterItemCategory="human resources"/>
+      <FilterItemContainer filterItemCategory="all"/>
+      <FilterItemContainer filterItemCategory="executives"/>
+      <FilterItemContainer filterItemCategory="sales & marketing"/>
+      <FilterItemContainer filterItemCategory="engineering"/>
+      <FilterItemContainer filterItemCategory="operations"/>
+      <FilterItemContainer filterItemCategory="human resources"/>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import {
   Header,
 } from '../../components';
 import IconGroupContainer from '../../containers/IconGroupContainer';
+import FilterItemContainer from '../../containers/FilterItemContainer';
 import {ContainerEnhancer} from '../../HOC';
 
 class Home extends React.Component {
@@ -14,9 +15,11 @@ class Home extends React.Component {
 
     return (
       <div className="home-page">
+        <Test />
         <Header/>
         <FilterGroup/>
         <IconGroupContainer/>
+        <FilterItemContainer/>
       </div>
     );
   }

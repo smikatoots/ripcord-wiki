@@ -17,3 +17,10 @@ function dispatchTest(data) {
     data
   };
 }
+
+export function changeFilter(filter) {
+  return {
+    type: types.CHANGE_FILTER,
+    filter
+  }
+}
