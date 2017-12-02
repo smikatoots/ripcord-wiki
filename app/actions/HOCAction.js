@@ -6,8 +6,10 @@ import * as types from '../constants/ActionTypes';
 //   };
 // }
 
-export function changeFilter() {
+export function changeFilter(filter, iconDetails) {
   return {
-    type: types.CHANGE_FILTER
+    type: types.CHANGE_FILTER,
+    filter,
+    iconDetails
   };
 }

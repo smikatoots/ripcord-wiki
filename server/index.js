@@ -22,7 +22,7 @@ const launch = require('./bootstrap/launch');
 const api = require('./api');
 
 //bootstrap database
-const db = database();
+const db = database().mongoose;
 
 const app = express();
 
@@ -46,12 +46,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname.replace(serverConfig.serverRoute, ''), serverConfig.publicRoute)));
-
 const apiRoutes = express.Router();
 app.use(serverConfig.apiRoute, apiRoutes);
 
+
+
+
+
 //initialize the api
-api(app);
+api(app, db);
 
 //setup routing
 routing(app);

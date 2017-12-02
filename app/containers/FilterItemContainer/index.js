@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/HomePage';
+import * as actions from '../../actions/HOCAction';
 // import { changeFilter } from '../../actions/HomePage';
 import {
   FilterItem,
@@ -14,9 +14,30 @@ class FilterItemContainer extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    axios.get('/icon')
+    .then(res => {
+      this.props.changeFilter("all", res.data);
+    });
+  }
+
   changeFilter(filter) {
-    console.log('CURRENT FILTER', this.props.currentFilter);
-    this.props.changeFilterProp(filter);
+    axios.get(`/icon`)
+    .then(res => {
+      const iconDetails = res.data;
+      var filteredIconDetails;
+      if (filter === "all") {
+        filteredIconDetails = iconDetails;
+      } else {
+        filteredIconDetails = iconDetails.filter((icon) => {
+          console.log(icon.department === filter);
+          return icon.department === filter
+        });
+      }
+
+      this.props.changeFilter(filter, filteredIconDetails);
+    })
+
   }
 
   render() {
@@ -30,21 +51,4 @@ class FilterItemContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-    return {
-      currentFilter: state.filter
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-      changeFilterProp: (filter) => dispatch(actions.changeFilter(filter)),
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(FilterItemContainer);
-
-// export default ContainerEnhancer(FilterItemContainer, actions);
+export default ContainerEnhancer(FilterItemContainer, actions);

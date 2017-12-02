@@ -7,7 +7,7 @@ const Icon = props => {
     <div className="icon">
       <img src="https://www.gstatic.com/webp/gallery3/1.png"/>
       <div>{props.fname} {props.lname}</div>
-      <div>{props.title}</div>
+      <div>{props.title}, {props.department}</div>
     </div>
   );
 };

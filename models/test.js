@@ -16,6 +16,10 @@ let EmployeeSchema = new mongoose.Schema({
   department: {
     type: String,
     required: true
+  },
+  img: {
+    data: Buffer,
+    type: String
   }
 });
 

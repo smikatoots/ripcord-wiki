@@ -6,7 +6,22 @@ const api = {
   root: require('./root')
 };
 
-module.exports = (app) => {
+const multer = require("multer");
+var upload = multer({ dest: 'uploads/' })
+var fs = require('fs');
+
+module.exports = (app, db) => {
+
+// TEST FOR UPLOAD
+    app.post('/upload',function(req,res){
+      console.log("req", req);
+     var newItem = new Employee();
+     newItem.img.data = fs.readFileSync(req.body.avatar)
+     newItem.img.contentType = 'image/png';
+     newItem.save();
+    });
+
+// UPLOAD END
     app.get('/icon', function(req, res) {
       console.log('ICON GET REQUEST HERE');
       Employee.find(function(err, employees) {
@@ -25,6 +40,7 @@ module.exports = (app) => {
         fname: 'mika',
         lname: 'reyes',
         title: 'hobo',
+        department: 'all'
       });
 
       e.save(function(err, employee) {
@@ -37,7 +53,8 @@ module.exports = (app) => {
           res.json({
             fname: employee.fname,
             lname: employee.lname,
-            title: employee.title
+            title: employee.title,
+            department: employee.department
           });
         }
       });

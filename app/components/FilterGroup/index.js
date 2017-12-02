@@ -11,7 +11,7 @@ const FilterGroup = props => {
     <div className="filter-group">
       <FilterItemContainer filterItemCategory="all"/>
       <FilterItemContainer filterItemCategory="executives"/>
-      <FilterItemContainer filterItemCategory="sales & marketing"/>
+      <FilterItemContainer filterItemCategory="sales and marketing"/>
       <FilterItemContainer filterItemCategory="engineering"/>
       <FilterItemContainer filterItemCategory="operations"/>
       <FilterItemContainer filterItemCategory="human resources"/>

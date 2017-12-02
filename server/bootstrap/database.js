@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 let config = require('../../config');
 
 module.exports = () => {
-  mongoose.connect(config.database, {
+  var conn = mongoose.connect(config.database, {
     useMongoClient: true
   });
   mongoose.connection.on('error', function () {
@@ -10,6 +10,6 @@ module.exports = () => {
   });
 
   return {
-    connection: mongoose.connection
+    mongoose: mongoose,
   }
 };

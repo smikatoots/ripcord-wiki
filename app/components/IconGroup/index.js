@@ -14,6 +14,7 @@ const IconGroup = props => {
         fname={icon.fname}
         lname={icon.lname}
         title={icon.title}
+        department={icon.department}
         />
       )}
     </div>
