@@ -50,11 +50,8 @@ const apiRoutes = express.Router();
 app.use(serverConfig.apiRoute, apiRoutes);
 
 
-
-
-
 //initialize the api
-api(app, db);
+api(app);
 
 //setup routing
 routing(app);

@@ -6,22 +6,11 @@ const api = {
   root: require('./root')
 };
 
-const multer = require("multer");
-var upload = multer({ dest: 'uploads/' })
-var fs = require('fs');
+var express = require('express');
+var app = express();
 
 module.exports = (app, db) => {
 
-// TEST FOR UPLOAD
-    app.post('/upload',function(req,res){
-      console.log("req", req);
-     var newItem = new Employee();
-     newItem.img.data = fs.readFileSync(req.body.avatar)
-     newItem.img.contentType = 'image/png';
-     newItem.save();
-    });
-
-// UPLOAD END
     app.get('/icon', function(req, res) {
       console.log('ICON GET REQUEST HERE');
       Employee.find(function(err, employees) {

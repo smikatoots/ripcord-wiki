@@ -4628,15 +4628,6 @@ Object.defineProperty(exports, 'Header', {
   }
 });
 
-var _Upload = __webpack_require__(337);
-
-Object.defineProperty(exports, 'Upload', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Upload).default;
-  }
-});
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -30822,7 +30813,7 @@ var actions = _interopRequireWildcard(_HomePage);
 
 var _components = __webpack_require__(37);
 
-var _IconGroupContainer = __webpack_require__(334);
+var _IconGroupContainer = __webpack_require__(335);
 
 var _IconGroupContainer2 = _interopRequireDefault(_IconGroupContainer);
 
@@ -30860,8 +30851,7 @@ var Home = function (_React$Component) {
         { className: 'home-page' },
         _react2.default.createElement(_components.Header, null),
         _react2.default.createElement(_components.FilterGroup, null),
-        _react2.default.createElement(_IconGroupContainer2.default, null),
-        _react2.default.createElement(_components.Upload, null)
+        _react2.default.createElement(_IconGroupContainer2.default, null)
       );
     }
   }]);
@@ -32555,7 +32545,8 @@ Header.propTypes = {};
 exports.default = Header;
 
 /***/ }),
-/* 334 */
+/* 334 */,
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32624,51 +32615,6 @@ var IconGroupContainer = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _HOC.ContainerEnhancer)(IconGroupContainer, actions);
-
-/***/ }),
-/* 335 */,
-/* 336 */,
-/* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(6);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import {
-//
-// } from '../../components';
-var Upload = function Upload(props) {
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'form',
-      { action: '/upload', method: 'POST', enctype: 'multipart/form-data' },
-      _react2.default.createElement('input', { type: 'file', name: 'avatar' }),
-      _react2.default.createElement('input', { type: 'submit', value: 'submit' })
-    )
-  );
-};
-
-Upload.defaultProps = {};
-
-Upload.propTypes = {};
-
-exports.default = Upload;
 
 /***/ })
 /******/ ]);

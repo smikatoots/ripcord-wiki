@@ -4,7 +4,6 @@ import {
   Test,
   FilterGroup,
   Header,
-  Upload,
 } from '../../components';
 import IconGroupContainer from '../../containers/IconGroupContainer';
 import FilterItemContainer from '../../containers/FilterItemContainer';
@@ -18,7 +17,6 @@ class Home extends React.Component {
         <Header/>
         <FilterGroup/>
         <IconGroupContainer/>
-        <Upload/>
       </div>
     );
   }
