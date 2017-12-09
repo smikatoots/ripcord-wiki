@@ -3,20 +3,14 @@ import PropTypes from 'prop-types';
 import {
   Icon,
 } from '../../components';
+import IconContainer from '../../containers/IconContainer';
 
 const IconGroup = props => {
-
   return (
-    <div className="icon-group">
-      {props.iconDetails.map(icon =>
-        <Icon
-        key={icon._id}
-        fname={icon.fname}
-        lname={icon.lname}
-        title={icon.title}
-        department={icon.department}
-        />
-      )}
+    <div className="icon">
+      <IconContainer
+        iconDetails={props.iconDetails}
+      />
     </div>
   );
 };

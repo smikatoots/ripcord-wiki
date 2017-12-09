@@ -34,7 +34,6 @@ class FilterItemContainer extends React.Component {
           return icon.department === filter
         });
       }
-
       this.props.changeFilter(filter, filteredIconDetails);
     })
 

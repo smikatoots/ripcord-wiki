@@ -3,7 +3,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/HOCAction';
 import {
-  Icon,
   IconGroup
 } from '../../components';
 import {ContainerEnhancer} from '../../HOC';
@@ -13,14 +12,12 @@ class IconGroupContainer extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    console.log('state', this);
-  }
-
   render() {
     return (
       <div>
-          <IconGroup iconDetails={this.props.filter[1]} />
+          <IconGroup
+          iconDetails={this.props.filter[1]}
+          />
       </div>
     );
   }
