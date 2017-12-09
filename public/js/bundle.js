@@ -15436,8 +15436,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import { changeFilter } from '../../actions/HomePage';
-
 
 var FilterItemContainer = function (_React$Component) {
   _inherits(FilterItemContainer, _React$Component);
@@ -15453,7 +15451,7 @@ var FilterItemContainer = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios2.default.get('/icon').then(function (res) {
+      _axios2.default.get('/employees').then(function (res) {
         _this2.props.changeFilter("all", res.data);
       });
     }
@@ -15462,7 +15460,7 @@ var FilterItemContainer = function (_React$Component) {
     value: function changeFilter(filter) {
       var _this3 = this;
 
-      _axios2.default.get('/icon').then(function (res) {
+      _axios2.default.get('/employees').then(function (res) {
         var iconDetails = res.data;
         var filteredIconDetails;
         if (filter === "all") {
@@ -32479,7 +32477,7 @@ var Icon = function Icon(props) {
       'button',
       {
         onClick: function onClick() {
-          return props.openModal(true);
+          return props.openModal(true, props.id);
         }
       },
       'click'
@@ -33836,31 +33834,25 @@ var ModalItem = function ModalItem(props) {
       null,
       'I AM A MODAL!!!!'
     ),
-    props.fname,
     _react2.default.createElement(
-      'form',
+      'div',
       null,
-      _react2.default.createElement('input', null),
-      _react2.default.createElement(
-        'button',
-        null,
-        'tab navigation'
-      ),
-      _react2.default.createElement(
-        'button',
-        null,
-        'stays'
-      ),
-      _react2.default.createElement(
-        'button',
-        null,
-        'inside'
-      ),
-      _react2.default.createElement(
-        'button',
-        null,
-        'the modal'
-      )
+      props.modalDetails.fname
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.modalDetails.lname
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.modalDetails.department
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      props.modalDetails.title
     ),
     _react2.default.createElement(
       'button',
@@ -33950,6 +33942,7 @@ var ModalItemContainer = function (_React$Component) {
     key: 'closeModal',
     value: function closeModal(bool) {
       this.props.toggleModal(bool);
+      this.props.changeModalDetails({});
     }
   }, {
     key: 'render',
@@ -33968,7 +33961,7 @@ var ModalItemContainer = function (_React$Component) {
             ariaHideApp: false
           },
           _react2.default.createElement(_components.ModalItem, {
-            fname: this.props.modal[1],
+            modalDetails: this.props.modaldetails,
             closeModal: function closeModal(bool) {
               return _this2.closeModal(bool);
             }
@@ -34034,12 +34027,7 @@ var types = _interopRequireWildcard(_ActionTypes);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var initialState = {
-  fname: "",
-  lname: "",
-  title: "",
-  department: ""
-};
+var initialState = {};
 
 function changeModalDetails() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -34047,7 +34035,8 @@ function changeModalDetails() {
 
   switch (action.type) {
     case types.CHANGE_MODAL_DETAILS:
-      var newState = { fname: "mika2", lname: "reyes1" };
+      console.log('modal', action.modalDetails);
+      var newState = action.modalDetails;
       return newState;
     default:
       return state;
@@ -34111,15 +34100,21 @@ var IconContainer = function (_React$Component) {
     }
   }, {
     key: 'openModal',
-    value: function openModal(bool) {
-      console.log('PROPS', this.props);
-      console.log('BOOL', bool);
-      this.props.toggleModal(bool);
+    value: function openModal(bool, id) {
+      var _this2 = this;
+
+      _axios2.default.post('/employee', {
+        id: id
+      }).then(function (res) {
+        console.log('RES', res);
+        _this2.props.changeModalDetails(res.data[0]);
+        _this2.props.toggleModal(bool);
+      });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react2.default.createElement(
         'div',
@@ -34132,8 +34127,8 @@ var IconContainer = function (_React$Component) {
             lname: icon.lname,
             title: icon.title,
             department: icon.department,
-            openModal: function openModal(bool) {
-              return _this2.openModal(bool);
+            openModal: function openModal(bool, id) {
+              return _this3.openModal(bool, id);
             }
           });
         })

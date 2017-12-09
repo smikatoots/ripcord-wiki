@@ -1,16 +1,12 @@
 import * as types from '../constants/ActionTypes';
 
-const initialState = {
-  fname: "",
-  lname: "",
-  title: "",
-  department: "",
-};
+const initialState = {};
 
 export default function changeModalDetails(state = initialState, action) {
   switch (action.type) {
     case types.CHANGE_MODAL_DETAILS:
-      const newState = { fname: "mika2", lname: "reyes1"}
+      console.log('modal', action.modalDetails);
+      const newState = action.modalDetails;
       return newState;
     default:
       return state;

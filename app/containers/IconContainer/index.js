@@ -17,10 +17,16 @@ class IconContainer extends React.Component {
     console.log('state', this);
   }
 
-  openModal(bool) {
-    console.log('PROPS', this.props);
-    console.log('BOOL', bool);
-    this.props.toggleModal(bool);
+  openModal(bool, id) {
+    axios.post('/employee', {
+      id: id
+    })
+    .then(res => {
+      console.log('RES', res);
+      this.props.changeModalDetails(res.data[0])
+      this.props.toggleModal(bool);
+    });
+
   }
 
   render() {
@@ -34,7 +40,7 @@ class IconContainer extends React.Component {
           lname={icon.lname}
           title={icon.title}
           department={icon.department}
-          openModal={(bool) => this.openModal(bool)}
+          openModal={(bool, id) => this.openModal(bool, id)}
           />
         )}
       </div>

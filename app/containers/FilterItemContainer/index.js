@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/HOCAction';
-// import { changeFilter } from '../../actions/HomePage';
 import {
   FilterItem,
   Test
@@ -15,14 +14,14 @@ class FilterItemContainer extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/icon')
+    axios.get('/employees')
     .then(res => {
       this.props.changeFilter("all", res.data);
     });
   }
 
   changeFilter(filter) {
-    axios.get(`/icon`)
+    axios.get(`/employees`)
     .then(res => {
       const iconDetails = res.data;
       var filteredIconDetails;

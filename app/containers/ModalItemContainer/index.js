@@ -26,6 +26,7 @@ class ModalItemContainer extends React.Component {
 
   closeModal(bool) {
     this.props.toggleModal(bool)
+    this.props.changeModalDetails({})
   }
 
   render() {
@@ -38,7 +39,7 @@ class ModalItemContainer extends React.Component {
           ariaHideApp={false}
           >
           <ModalItem
-            fname={this.props.modal[1]}
+            modalDetails={this.props.modaldetails}
             closeModal={(bool) => this.closeModal(bool)}
           />
         </Modal>

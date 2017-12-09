@@ -11,8 +11,7 @@ var app = express();
 
 module.exports = (app, db) => {
 
-    app.get('/icon', function(req, res) {
-      console.log('ICON GET REQUEST HERE');
+    app.get('/employees', function(req, res) {
       Employee.find(function(err, employees) {
         if (err) {
           console.log(err);
@@ -22,6 +21,16 @@ module.exports = (app, db) => {
         }
       });
     });
+
+    app.post('/employee', function(req, res) {
+      Employee.find({ _id: req.body.id}, function(err, employee) {
+        if (err) {
+        } else {
+          res.send(employee);
+          return
+        }
+      })
+    })
 
     app.post('/test', function(req, res) {
       console.log('post test', models.EmployeeSchema);

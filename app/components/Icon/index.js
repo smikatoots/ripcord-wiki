@@ -5,7 +5,7 @@ const Icon = props => {
   return (
     <div className="icon">
       <button
-        onClick={() => props.openModal(true)}
+        onClick={() => props.openModal(true, props.id)}
       >click</button>
       <img src="https://www.gstatic.com/webp/gallery3/1.png"/>
       <div>{props.fname} {props.lname}</div>

@@ -8,14 +8,10 @@ const ModalItem = props => {
   return (
     <div className="modal-item">
       <div>I AM A MODAL!!!!</div>
-      {props.fname}
-      <form>
-        <input />
-        <button>tab navigation</button>
-        <button>stays</button>
-        <button>inside</button>
-        <button>the modal</button>
-      </form>
+      <div>{props.modalDetails.fname}</div>
+      <div>{props.modalDetails.lname}</div>
+      <div>{props.modalDetails.department}</div>
+      <div>{props.modalDetails.title}</div>
       <button
         className="icon-item"
         onClick={() => props.closeModal(false)}
