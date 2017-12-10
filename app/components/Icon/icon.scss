@@ -1,16 +1,35 @@
 $size: 200px;
 
 .icon {
-  height: auto;
+  font-family: "Museo Sans";
+  position: relative;
+  height: $size;
   width: $size;
+  border-radius: $size;
   margin: 10px;
   color: black;
   text-align: center;
-  text-transform: capitalize;
+  background-color: #A7D1D5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
   img {
-    background-color: black;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: $size;
     width: $size;
     border-radius: $size;
+    transition: .5s ease;
+    &:hover {
+      opacity: 0.2;
+    }
   }
 }

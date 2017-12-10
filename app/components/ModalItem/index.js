@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  // Icon,
+  ModalHeader,
+  ModalBody
 } from '../../components';
 
 const ModalItem = props => {
   return (
-    <div className="modal-item">
-      <div>I AM A MODAL!!!!</div>
-      <div>{props.modalDetails.fname}</div>
-      <div>{props.modalDetails.lname}</div>
-      <div>{props.modalDetails.department}</div>
-      <div>{props.modalDetails.title}</div>
+    <div className="modal-content">
+      <ModalHeader modalDetails={props.modalDetails}/>
+      <ModalBody modalDetails={props.modalDetails}/>
       <button
-        className="icon-item"
+        className="modal-button"
         onClick={() => props.closeModal(false)}
-      >X</button>
+      >x</button>
     </div>
   );
 };

@@ -17,10 +17,26 @@ let EmployeeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  img: {
+  pic: {
     data: Buffer,
     type: String
-  }
+  },
+  bio: {
+    type: String,
+    require: true
+  },
+  fact: {
+    type: String,
+    require: true
+  },
+  work: {
+    type: Array,
+    require: true
+  },
+  hobbies: {
+    type: Array,
+    require: true
+  },
 });
 
 var Employee = mongoose.model('Employee', EmployeeSchema);

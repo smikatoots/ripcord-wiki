@@ -7,7 +7,7 @@ import IconContainer from '../../containers/IconContainer';
 
 const IconGroup = props => {
   return (
-    <div className="icon">
+    <div className="icon-group">
       <IconContainer
         iconDetails={props.iconDetails}
       />

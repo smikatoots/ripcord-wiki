@@ -1,0 +1,19 @@
+.modal-column {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  // padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-weight: 900;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-weight: 100;
+}

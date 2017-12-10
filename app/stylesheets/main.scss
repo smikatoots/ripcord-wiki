@@ -3,7 +3,7 @@
 
 html {
   body {
-    font-family: Avenir;
+    font-family: Helvetica;
 
     @import "../components/Test/test";
     @import "../components/FilterGroup/filtergroup";
@@ -11,6 +11,16 @@ html {
     @import "../components/Header/header";
     @import "../components/Icon/icon";
     @import "../components/IconGroup/icongroup";
+    @import "../components/ModalBio/modalbio";
+    @import "../components/ModalBody/modalbody";
+    @import "../components/ModalBodyContent/modalbodycontent";
+    @import "../components/ModalBodyTitle/modalbodytitle";
+    @import "../components/ModalBodyList/modalbodylist";
+    @import "../components/ModalColumn/modalcolumn";
+    @import "../components/ModalFact/modalfact";
+    @import "../components/ModalHeader/modalheader";
+    @import "../components/ModalItem/modalitem";
+
 
 
 

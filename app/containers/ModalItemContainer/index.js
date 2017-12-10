@@ -8,16 +8,16 @@ import {
 } from '../../components';
 import {ContainerEnhancer} from '../../HOC';
 
-const customStyles = {
-  content : {
-    top                   : '20%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+// const customStyles = {
+//   content : {
+//     top                   : '20%',
+//     left                  : '50%',
+//     right                 : 'auto',
+//     bottom                : 'auto',
+//     marginRight           : '-50%',
+//     transform             : 'translate(-50%, -50%)'
+//   }
+// };
 
 class ModalItemContainer extends React.Component {
   constructor(props) {
@@ -34,9 +34,9 @@ class ModalItemContainer extends React.Component {
       <div>
       <Modal
           isOpen={this.props.modal}
-          style={customStyles}
           contentLabel="Employee Modal"
           ariaHideApp={false}
+          className="modal"
           >
           <ModalItem
             modalDetails={this.props.modaldetails}

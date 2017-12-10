@@ -31,7 +31,7 @@ class IconContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="icon-group">
         {this.props.iconDetails.map(icon =>
           <Icon
           key={icon._id}
@@ -39,7 +39,7 @@ class IconContainer extends React.Component {
           fname={icon.fname}
           lname={icon.lname}
           title={icon.title}
-          department={icon.department}
+          pic={icon.pic}
           openModal={(bool, id) => this.openModal(bool, id)}
           />
         )}
