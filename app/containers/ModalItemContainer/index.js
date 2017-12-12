@@ -8,17 +8,6 @@ import {
 } from '../../components';
 import {ContainerEnhancer} from '../../HOC';
 
-// const customStyles = {
-//   content : {
-//     top                   : '20%',
-//     left                  : '50%',
-//     right                 : 'auto',
-//     bottom                : 'auto',
-//     marginRight           : '-50%',
-//     transform             : 'translate(-50%, -50%)'
-//   }
-// };
-
 class ModalItemContainer extends React.Component {
   constructor(props) {
     super(props);

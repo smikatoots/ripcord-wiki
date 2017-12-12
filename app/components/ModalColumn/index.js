@@ -8,11 +8,11 @@ import {
 const ModalColumn = props => {
   return (
     <div className="modal-column">
-      <div className="modal-work-desc">
+      <div className="modal-column-items">
         <ModalBodyTitle text="what do i do at work: "/>
         <ModalBodyList array={props.modalDetails.work}/>
       </div>
-      <div className="modal-hobbies">
+      <div className="modal-column-items">
         <ModalBodyTitle text="hobbies: "/>
         <ModalBodyList array={props.modalDetails.hobbies}/>
       </div>

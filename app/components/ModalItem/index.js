@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   ModalHeader,
-  ModalBody
+  ModalBody,
+  XButton
 } from '../../components';
 
 const ModalItem = props => {
@@ -10,10 +11,7 @@ const ModalItem = props => {
     <div className="modal-content">
       <ModalHeader modalDetails={props.modalDetails}/>
       <ModalBody modalDetails={props.modalDetails}/>
-      <button
-        className="modal-button"
-        onClick={() => props.closeModal(false)}
-      >x</button>
+      <XButton closeModal={(bool) => props.closeModal(bool)} />
     </div>
   );
 };

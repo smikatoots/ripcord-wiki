@@ -1,0 +1,26 @@
+.header {
+  border-bottom: 0.3px solid lightgrey;
+  padding-bottom: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  img {
+    height: 45px;
+  }
+}
+
+.header-button {
+  background-color: #4EA2AB;
+  border: 0px;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  margin: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: #302C2C;
+  }
+}

@@ -13,3 +13,7 @@ export {default as ModalFact} from './ModalFact';
 export {default as ModalBodyTitle} from './ModalBodyTitle';
 export {default as ModalBodyContent} from './ModalBodyContent';
 export {default as ModalBodyList} from './ModalBodyList';
+export {default as XButton} from './XButton';
+export {default as FeedbackModal} from './FeedbackModal';
+export {default as FeedbackForm} from './FeedbackForm';
+export {default as FeedbackButton} from './FeedbackButton';

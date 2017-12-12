@@ -1,25 +1,22 @@
+$picsize: 150px;
 
 .modal-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  img {
+    height: $picsize;
+    width: $picsize;
+    border-radius: $picsize;
+    margin-right: 20px;
+  }
 }
 
 .modal-name {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .modal-title {
   font-size: 30px;
-}
-
-$picsize: 150px;
-
-.modal-pic {
-  border: 0.5px solid;
-  height: $picsize;
-  width: $picsize;
-  border-radius: $picsize;
-  margin-right: 20px;
 }

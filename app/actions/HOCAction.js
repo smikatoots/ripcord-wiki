@@ -15,6 +15,13 @@ export function toggleModal(bool) {
   };
 }
 
+export function toggleFeedbackModal(bool) {
+  return {
+    type: types.TOGGLE_FEEDBACK_MODAL,
+    bool
+  };
+}
+
 export function changeModalDetails(modalDetails) {
   return {
     type: types.CHANGE_MODAL_DETAILS,

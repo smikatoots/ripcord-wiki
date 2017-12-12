@@ -7,7 +7,7 @@ import {
 const ModalHeader = props => {
   return (
       <div className="modal-header">
-        <img src={props.modalDetails.pic} className="modal-pic"/>
+        <img src={`uploads/pics/${props.modalDetails.pic}`}/>
         <div>
           <div className="modal-name">{props.modalDetails.fname} {props.modalDetails.lname}</div>
           <div className="modal-title">{props.modalDetails.title} / {props.modalDetails.department}</div>

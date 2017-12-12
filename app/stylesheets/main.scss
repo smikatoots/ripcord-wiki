@@ -4,6 +4,7 @@
 html {
   body {
     font-family: Helvetica;
+    margin: 0;
 
     @import "../components/Test/test";
     @import "../components/FilterGroup/filtergroup";
@@ -20,6 +21,11 @@ html {
     @import "../components/ModalFact/modalfact";
     @import "../components/ModalHeader/modalheader";
     @import "../components/ModalItem/modalitem";
+    @import "../components/FeedbackModal/feedbackmodal";
+    @import "../components/FeedbackForm/feedbackform";
+    @import "../components/FeedbackButton/feedbackbutton";
+    @import "../components/XButton/xbutton";
+
 
 
 

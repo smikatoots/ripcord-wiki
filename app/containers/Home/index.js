@@ -9,6 +9,7 @@ import {
 import IconGroupContainer from '../../containers/IconGroupContainer';
 import FilterItemContainer from '../../containers/FilterItemContainer';
 import ModalItemContainer from '../../containers/ModalItemContainer';
+import FeedbackModalContainer from '../../containers/FeedbackModalContainer';
 import {ContainerEnhancer} from '../../HOC';
 
 class Home extends React.Component {
@@ -19,6 +20,7 @@ class Home extends React.Component {
         <FilterGroup/>
         <IconGroupContainer/>
         <ModalItemContainer/>
+        <FeedbackModalContainer/>
       </div>
     );
   }

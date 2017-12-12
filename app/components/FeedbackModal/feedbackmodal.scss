@@ -1,0 +1,30 @@
+.modal {
+    top: 10%;
+    max-height: 600px;
+    margin-right: -50%;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 50px;
+    border: 0.5px solid lightgrey;
+    border-radius: 5px;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    outline: none;
+    overflow-y: scroll;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 10%; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 10%; opacity: 1}
+}

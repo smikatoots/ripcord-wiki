@@ -6,9 +6,9 @@ const Icon = props => {
     <div
     onClick={() => props.openModal(true, props.id)}
     className="icon">
-        <img src={props.pic}/>
-        <div>{props.fname} {props.lname}</div>
-        <div>{props.title}</div>
+        <img src={`uploads/pics/${props.pic}`}/>
+        <div className="icon-name">{props.fname} {props.lname}</div>
+        <div className="icon-title">{props.title}</div>
     </div>
   );
 };
