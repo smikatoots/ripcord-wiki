@@ -5,19 +5,20 @@ import {
 
 const FeedbackForm = props => {
   return (
-    <div className="feedback-form">
-      <form method="post" action="/feedback">
-        <input type="text" name="first" placeholder="first name" value=""/>
-        <input type="text" name="last" placeholder="last name" value=""/>
+    <div className="feedback-div">
+      we love feedback. <br/> drop us a note and help improve the ripcord wiki!
+      <form className="feedback-form" method="post" action="/feedback">
+        <input type="text" name="name" placeholder="name"/>
         <select name="type">
-          <option>edit fields</option>
-          <option>submit a feature request</option>
-          <option>report a bug</option>
-          <option>suggest an improvement</option>
-          <option>leave a note of gratitude</option>
-          <option>other</option>
+          <option value="" selected hidden>what would you like to do?</option><br/>
+          <option value="edit">edit fields</option>
+          <option value="request">submit a feature request</option>
+          <option value="bug">report a bug</option>
+          <option value="suggestion">suggest an improvement</option>
+          <option value="note">leave a random note :)</option>
         </select>
-        <input type="text" cols="8" name="comment" placeholder="leave your comments here" value=""/>
+        <textarea row="100" placeholder="tell us more" name="comment"></textarea>
+        <input type="submit" value="submit"/>
       </form>
     </div>
   );

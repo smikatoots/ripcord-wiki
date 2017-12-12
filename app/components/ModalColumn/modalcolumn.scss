@@ -21,3 +21,12 @@ ul {
 .content {
   font-weight: 100;
 }
+
+@media screen and (max-width: 600px) {
+  .modal-column {
+    flex-direction: column;
+  }
+  .modal-column-items {
+    width: 100%;
+  }
+}

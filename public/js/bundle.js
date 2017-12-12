@@ -555,6 +555,15 @@ Object.defineProperty(exports, 'FeedbackButton', {
   }
 });
 
+var _FeedbackPage = __webpack_require__(368);
+
+Object.defineProperty(exports, 'FeedbackPage', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_FeedbackPage).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -29199,12 +29208,18 @@ var _Home = __webpack_require__(311);
 
 var _Home2 = _interopRequireDefault(_Home);
 
+var _FeedbackPageContainer = __webpack_require__(369);
+
+var _FeedbackPageContainer2 = _interopRequireDefault(_FeedbackPageContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createElement(
   _reactRouter.Route,
   { component: _App2.default },
-  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default })
+  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+  '// ',
+  _react2.default.createElement(_reactRouter.Route, { path: '/feed', component: _FeedbackPageContainer2.default })
 );
 
 /***/ }),
@@ -33206,7 +33221,7 @@ var FeedbackButtonContainer = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'modal-button' },
+        null,
         _react2.default.createElement(_components.FeedbackButton, { openModal: function openModal(bool) {
             return _this2.openModal(bool);
           } })
@@ -33707,47 +33722,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var FeedbackForm = function FeedbackForm(props) {
   return _react2.default.createElement(
     'div',
-    { className: 'feedback-form' },
+    { className: 'feedback-div' },
+    'we love feedback. ',
+    _react2.default.createElement('br', null),
+    ' drop us a note and help improve the ripcord wiki!',
     _react2.default.createElement(
       'form',
-      { method: 'post', action: '/feedback' },
-      _react2.default.createElement('input', { type: 'text', name: 'first', placeholder: 'first name', value: '' }),
-      _react2.default.createElement('input', { type: 'text', name: 'last', placeholder: 'last name', value: '' }),
+      { className: 'feedback-form', method: 'post', action: '/feedback' },
+      _react2.default.createElement('input', { type: 'text', name: 'name', placeholder: 'name' }),
       _react2.default.createElement(
         'select',
         { name: 'type' },
         _react2.default.createElement(
           'option',
-          null,
+          { value: '', selected: true, hidden: true },
+          'what would you like to do?'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'option',
+          { value: 'edit' },
           'edit fields'
         ),
         _react2.default.createElement(
           'option',
-          null,
+          { value: 'request' },
           'submit a feature request'
         ),
         _react2.default.createElement(
           'option',
-          null,
+          { value: 'bug' },
           'report a bug'
         ),
         _react2.default.createElement(
           'option',
-          null,
+          { value: 'suggestion' },
           'suggest an improvement'
         ),
         _react2.default.createElement(
           'option',
-          null,
-          'leave a note of gratitude'
-        ),
-        _react2.default.createElement(
-          'option',
-          null,
-          'other'
+          { value: 'note' },
+          'leave a random note :)'
         )
       ),
-      _react2.default.createElement('input', { type: 'text', cols: '8', name: 'comment', placeholder: 'leave your comments here', value: '' })
+      _react2.default.createElement('textarea', { row: '100', placeholder: 'tell us more', name: 'comment' }),
+      _react2.default.createElement('input', { type: 'submit', value: 'submit' })
     )
   );
 };
@@ -33791,7 +33810,7 @@ var FeedbackButton = function FeedbackButton(props) {
         onClick: function onClick() {
           return props.openModal(true);
         } },
-      'leave feedback'
+      _react2.default.createElement('img', { src: 'uploads/feedback-icon.png' })
     )
   );
 };
@@ -34951,7 +34970,7 @@ var FeedbackModalContainer = function (_React$Component) {
             isOpen: this.props.feedbackmodal,
             contentLabel: 'Feedback Modal',
             ariaHideApp: false,
-            className: 'modal'
+            className: 'feedback-modal'
           },
           _react2.default.createElement(_components.FeedbackModal, {
             closeModal: function closeModal(bool) {
@@ -34967,6 +34986,126 @@ var FeedbackModalContainer = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _HOC.ContainerEnhancer)(FeedbackModalContainer, actions);
+
+/***/ }),
+/* 366 */,
+/* 367 */,
+/* 368 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FeedbackPage = function FeedbackPage(props) {
+  return _react2.default.createElement(
+    'button',
+    {
+      className: 'filter-item',
+      onClick: function onClick() {
+        return props.changeFilter('' + props.filterItemCategory);
+      }
+    },
+    props.filterItemCategory
+  );
+};
+
+FeedbackPage.defaultProps = {};
+
+FeedbackPage.propTypes = {};
+
+exports.default = FeedbackPage;
+
+/***/ }),
+/* 369 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(26);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _reactRedux = __webpack_require__(22);
+
+var _HOCAction = __webpack_require__(27);
+
+var actions = _interopRequireWildcard(_HOCAction);
+
+var _components = __webpack_require__(6);
+
+var _HOC = __webpack_require__(28);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FeedbackPageContainer = function (_React$Component) {
+  _inherits(FeedbackPageContainer, _React$Component);
+
+  function FeedbackPageContainer(props) {
+    _classCallCheck(this, FeedbackPageContainer);
+
+    return _possibleConstructorReturn(this, (FeedbackPageContainer.__proto__ || Object.getPrototypeOf(FeedbackPageContainer)).call(this, props));
+    // this.state = {
+    //   feedback: {}
+    // }
+  }
+
+  _createClass(FeedbackPageContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _axios2.default.get('/feedback').then(function (res) {
+        console.log('RES', res);
+        // this.setState(res.data);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'FEEDBACKPAGE // ',
+        this.state.feedback
+      );
+    }
+  }]);
+
+  return FeedbackPageContainer;
+}(_react2.default.Component);
+
+exports.default = (0, _HOC.ContainerEnhancer)(FeedbackPageContainer, actions);
 
 /***/ })
 /******/ ]);

@@ -8,7 +8,7 @@ const FeedbackButton = props => {
     <div>
       <button className="feedback-button"
         onClick={() => props.openModal(true)}>
-        leave feedback
+        <img src="uploads/feedback-icon.png"/>
       </button>
     </div>
   );

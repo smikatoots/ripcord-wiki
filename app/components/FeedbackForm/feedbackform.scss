@@ -1,5 +1,21 @@
-input {
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
+input, select, textarea {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  margin: 10px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.feedback-div {
+  font-size: 20px;
+  text-align: center;
 }

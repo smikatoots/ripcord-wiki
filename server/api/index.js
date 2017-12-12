@@ -1,5 +1,6 @@
 let models = require('../../models/test');
 let Employee = models.Employee;
+let Feedback = models.Feedback;
 
 const Resources = require('../../app/constants/resources').default;
 const api = {
@@ -20,6 +21,37 @@ module.exports = (app, db) => {
           return;
         }
       });
+    });
+
+    app.get('/feedback', function(req, res) {
+      Feedback.find(function(err, feedback) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(feedback);
+          return;
+        }
+      });
+    });
+
+    app.post('/feedback', function(req, res) {
+      var f = new Feedback({
+        name: req.body.name,
+        type: req.body.type,
+        comment: req.body.comment
+      });
+
+      f.save(function(err, feedback) {
+        if (err) {
+          console.log(err);
+          res.status(500).redirect('/register');
+          return;
+        } else {
+          console.log('Feedback sent:', feedback);
+          return res.redirect('/');
+        }
+      });
+
     });
 
     app.post('/employee', function(req, res) {

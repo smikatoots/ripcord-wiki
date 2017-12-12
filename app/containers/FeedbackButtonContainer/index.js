@@ -25,7 +25,7 @@ class FeedbackButtonContainer extends React.Component {
 
   render() {
     return (
-      <div className="modal-button">
+      <div>
         <FeedbackButton openModal={(bool) => this.openModal(bool)}/>
       </div>
     );

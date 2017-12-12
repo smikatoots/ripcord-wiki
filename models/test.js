@@ -39,8 +39,26 @@ let EmployeeSchema = new mongoose.Schema({
   },
 });
 
+let FeedbackSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
+  },
+  comment: {
+    type: String,
+    required: true
+  },
+});
+
 var Employee = mongoose.model('Employee', EmployeeSchema);
+var Feedback = mongoose.model('Feedback', FeedbackSchema);
+
 
 module.exports = {
-  Employee
+  Employee,
+  Feedback
 }

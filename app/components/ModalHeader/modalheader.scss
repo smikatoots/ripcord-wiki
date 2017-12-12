@@ -20,3 +20,11 @@ $picsize: 150px;
 .modal-title {
   font-size: 30px;
 }
+
+
+@media screen and (max-width: 600px) {
+  .modal-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

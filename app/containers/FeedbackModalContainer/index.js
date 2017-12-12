@@ -25,7 +25,7 @@ class FeedbackModalContainer extends React.Component {
           isOpen={this.props.feedbackmodal}
           contentLabel="Feedback Modal"
           ariaHideApp={false}
-          className="modal"
+          className="feedback-modal"
           >
           <FeedbackModal
             closeModal={(bool) => this.closeModal(bool)}

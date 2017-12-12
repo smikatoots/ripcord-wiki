@@ -18,6 +18,10 @@
     overflow-y: scroll;
 }
 
+::-webkit-scrollbar {
+  background: transparent;
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top: -300px; opacity: 0}
@@ -27,4 +31,10 @@
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 10%; opacity: 1}
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 80%;
+  }
 }
