@@ -8,7 +8,7 @@ import {
 const FeedbackModal = props => {
   return (
     <div className="modal-content">
-      <FeedbackForm />
+      <FeedbackForm closeModal={(bool) => props.closeModal(bool)} />
       <XButton closeModal={(bool) => props.closeModal(bool)} />
     </div>
   );

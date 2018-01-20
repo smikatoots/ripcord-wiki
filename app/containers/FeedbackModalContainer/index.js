@@ -11,10 +11,11 @@ import {ContainerEnhancer} from '../../HOC';
 class FeedbackModalContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+    }
   }
 
   closeModal(bool) {
-    console.log('CLOSE MODAL BOOL', bool);
     this.props.toggleFeedbackModal(bool)
   }
 
@@ -30,7 +31,6 @@ class FeedbackModalContainer extends React.Component {
           <FeedbackModal
             closeModal={(bool) => this.closeModal(bool)}
           />
-
         </Modal>
       </div>
     );

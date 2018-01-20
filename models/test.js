@@ -42,7 +42,6 @@ let EmployeeSchema = new mongoose.Schema({
 let FeedbackSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
   },
   type: {
     type: String,
@@ -50,7 +49,6 @@ let FeedbackSchema = new mongoose.Schema({
   },
   comment: {
     type: String,
-    required: true
   },
 });
 

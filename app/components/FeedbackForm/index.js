@@ -10,15 +10,15 @@ const FeedbackForm = props => {
       <form className="feedback-form" method="post" action="/feedback">
         <input type="text" name="name" placeholder="name"/>
         <select name="type">
-          <option value="" selected hidden>what would you like to do?</option><br/>
+          <option value="" hidden>what would you like to do?</option>
           <option value="edit">edit fields</option>
           <option value="request">submit a feature request</option>
           <option value="bug">report a bug</option>
           <option value="suggestion">suggest an improvement</option>
           <option value="note">leave a random note :)</option>
         </select>
-        <textarea row="100" placeholder="tell us more" name="comment"></textarea>
-        <input type="submit" value="submit"/>
+        <textarea placeholder="tell us more pls" name="comment"></textarea>
+        <input type="submit" value="submit & exit modal"/>
       </form>
     </div>
   );

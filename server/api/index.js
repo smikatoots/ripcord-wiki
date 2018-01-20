@@ -23,32 +23,30 @@ module.exports = (app, db) => {
       });
     });
 
-    app.get('/feedback', function(req, res) {
-      Feedback.find(function(err, feedback) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send(feedback);
-          return;
-        }
-      });
+    app.get('/error', function(req, res) {
+      res.send("Error sending feedback. Please try again.");
+    });
+
+    app.get('/feedbacksent', function(req, res) {
+      res.send("Feedback sent. Thank you!");
     });
 
     app.post('/feedback', function(req, res) {
       var f = new Feedback({
-        name: req.body.name,
-        type: req.body.type,
+        name: req.body.name || 'anon',
+        type: req.body.type || 'note',
         comment: req.body.comment
       });
 
       f.save(function(err, feedback) {
         if (err) {
           console.log(err);
-          res.status(500).redirect('/register');
+          res.status(500).redirect('/error');
           return;
         } else {
           console.log('Feedback sent:', feedback);
-          return res.redirect('/');
+          res.redirect('/feedbacksent');
+          return;
         }
       });
 

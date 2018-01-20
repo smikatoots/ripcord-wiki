@@ -8,13 +8,10 @@ import {
 import {ContainerEnhancer} from '../../HOC';
 
 class IconGroupContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
-      <div>
+      <div className="home-page">
           <IconGroup
           iconDetails={this.props.filter[1]}
           />
